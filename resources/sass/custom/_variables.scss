@@ -1,0 +1,49 @@
+//
+// Custom Variables
+//
+// Here you can add your own variables overrides
+//
+// The file is included before any other variable file,
+// so you can override them because they all use !default
+// --------------------------------------------------
+
+// For example, changing the primary color
+$primary: #28282a;
+$secondary: #edb059;
+$background-color-front: #f4f4f4;
+$fa-font-path: "/fonts/fontawesome";
+$font-size-root: 14px;
+$font-weight-bold: 800;
+
+//$theme-colors: (
+//      "primary": $primary,
+//);
+
+//$theme-colors: map-merge(
+//    (
+//            "primary":    $primary,
+//            "secondary":  $secondary,
+//    ),
+//    $theme-colors
+//);
+
+$theme-colors: (
+    "primary":    $primary,
+    "secondary":  $secondary,
+    "success":    $success,
+    "info":       $info,
+    "warning":    $warning,
+    "danger":     $danger,
+    "light":      $light,
+    "dark":       $dark,
+    "primary-light":        lighten($primary, 15%),
+    "primary-lighter":      lighten($primary, 30%),
+    "primary-dark":         darken($primary, 10%),
+    "primary-darker":       darken($primary, 25%),
+    "success-light":        lighten($success, 24%),
+    "info-light":           lighten($info, 24%),
+    "warning-light":        lighten($warning, 24%),
+    "danger-light":         lighten($danger, 24%)
+);
+
+$flagsImagePath: "../images/flags/";

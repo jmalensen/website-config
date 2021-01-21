@@ -1,0 +1,283 @@
+//
+// Custom Main
+//
+// Add your own styles or override existing ones
+//
+// This file is included last, so you have access
+// to all Bootstrap and Dashmix functions/mixins/styles etc
+// --------------------------------------------------
+
+// If you have many custom styles, you can create and import additional files
+// For example you can create _component1.scss and include it as follows:
+// @import 'component1';
+
+html {
+  @include font-size(16px);
+}
+
+body{
+  background-color: #f4f4f4;
+  background-image: url("../images/background.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center bottom;
+}
+
+#page-container-front{
+  //background-color: $background-color-front;
+  background-color: transparent;
+  color:#333;
+
+  .iti {
+    display: block;
+  }
+  .iti__flag {
+    background-image: url("../images/flags/flags.png");
+  }
+
+  @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+    .iti__flag {
+      background-image: url("../images/flags/flags@2x.png");
+    }
+  }
+
+  .irs.irs--round .irs-line{
+    background-color: $secondary;
+  }
+
+  .irs--round .irs-min, .irs--round .irs-max {
+    font-size:25px;
+  }
+  .irs--round .irs-from, .irs--round .irs-to, .irs--round .irs-single{
+    font-size:25px;
+  }
+
+  .btn-choice-big{
+    color: $white;
+    background-color: $secondary;
+    border-color: lighten($secondary, 15%);
+    padding: 0.5rem 1rem;
+    font-size: 1.7rem;
+    font-weight: bold;
+    border-radius: 0.25rem;
+    transition: 0.3s all;
+    &:hover{
+      background-color: darken($secondary,25%);
+      border-color: darken($secondary, 25%);
+      transform: translateX(3px);
+    }
+  }
+
+  #page-header{
+    padding:15px 25px;
+    color: $primary;
+    min-height: 40px;
+    background: $background-color-front;
+  }
+
+  #main-container{
+    background-color: transparent;
+    margin-bottom: 100px;
+
+    .select2{
+      width: 100% !important;
+    }
+
+    #recap{
+      background: rgba($white,0.65);
+      padding: 15px 25px;
+    }
+
+    #country-choice{
+      display:flex;
+      justify-content:center;
+      align-items: stretch;
+      background: rgba($white,0.65);
+      border-radius: 50px;
+      min-height:400px;
+
+      .country{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+      }
+    }
+
+    .link-pays{
+      display: inline-block;
+      mask-image: linear-gradient(transparent, rgba($secondary, 1.0));
+      opacity: 0.5;
+      transition: all 0.3s;
+      &:before{
+        content:none;
+      }
+      &:hover, &.active{
+        opacity: 1;
+      }
+    }
+
+    .link-eko{
+      width:50%;
+      &:before{
+        content:none;
+      }
+    }
+
+    .pays{
+      display: none;
+    }
+
+    #eko-choice{
+      padding: 20px 30px;
+      ul, li{
+        list-style: none;
+      }
+    }
+
+    .nb-company{
+      border-right: 1px solid #333333;
+      @media screen and (max-width: 768px) {
+        border-right:none;
+      }
+    }
+
+    #local-address{
+      display: none;
+    }
+
+    #common-part{
+      h4{
+        padding-bottom: 3px;
+        border-bottom: 2px solid $secondary;
+      }
+
+      .common-block{
+        padding-top:5px;
+        padding-bottom:5px;
+        color:$white;
+        .inner-block{
+          height: 100%;
+          padding:10px 15px;
+          border:1px solid $white;
+          background-color: rgba($black, 0.25);
+
+          display: flex;
+          flex-wrap: wrap;
+          align-content: space-between;
+
+          .title{
+            width:100%;
+            font-size: 17px;
+            font-weight:bold;
+            padding-bottom: 2px;
+            margin-bottom: 5px;
+            border-bottom: 2px solid $secondary;
+          }
+          .detail{
+            margin-bottom: 5px;
+          }
+          div{
+            display:flex;
+            .icone{
+              flex: 1 1 auto;
+            }
+            .state{
+              flex: 0 0 auto;
+            }
+          }
+        }
+      }
+    }
+
+    #part-eko-lite, #part-eko{
+      h4{
+        padding-bottom: 3px;
+        border-bottom: 2px solid $secondary;
+      }
+
+      .eko-lite-block, .eko-crm-block{
+        color:$white;
+        .custom-block{
+          height: 100%;
+          .custom-control-label {
+            height: 100%;
+            background-color: rgba(grey, 0.35);
+            transition: 0.3s all;
+            display: flex;
+            flex-wrap: wrap;
+            align-content: space-between;
+          }
+
+          .custom-control-input:checked ~ .custom-control-label {
+            opacity:0.7;
+            background-color: rgba(green, 0.75);
+          }
+
+          .custom-block-indicator {
+            opacity: 0.5;
+            width: 2rem;
+            height: 2rem;
+            line-height: 2rem;
+            font-size: 1rem;
+            border-radius: 1rem;
+            top:2%;
+            right:2%;
+            background-color: $white;
+            color:green;
+          }
+        }
+
+        .title{
+          width: 100%;
+          font-size: 17px;
+          font-weight:bold;
+          padding-bottom: 2px;
+          margin-bottom: 5px;
+          border-bottom: 2px solid $secondary;
+        }
+        .detail{
+          width: 100%;
+          margin-bottom: 5px;
+        }
+      }
+    }
+
+    .custom-check-eko{
+      color:$white;
+      .custom-block{
+        height: 100%;
+        .custom-control-label {
+          height: 100%;
+          background-color: rgba(grey, 0.35);
+          transition: 0.3s all;
+        }
+
+        .custom-control-input:checked ~ .custom-control-label {
+          opacity:0.7;
+          background-color: rgba(green, 0.75);
+        }
+
+        .custom-block-indicator {
+          opacity: 0.5;
+          width: 2rem;
+          height: 2rem;
+          line-height: 2rem;
+          font-size: 1rem;
+          border-radius: 1rem;
+          top:2%;
+          right:2%;
+          background-color: $white;
+          color:green;
+        }
+      }
+    }
+  }
+
+  #page-footer{
+    color: $primary;
+    min-height: 80px;
+    //background: $background-color-front;
+    background: transparent;
+  }
+}
